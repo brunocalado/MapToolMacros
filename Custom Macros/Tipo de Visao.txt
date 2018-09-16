@@ -1,0 +1,10 @@
+[h: dude = getSelected()]
+[h: VisionTypeList = "Normal, VisaoNoturna"]
+[h: VisionTypeSelect = getProperty("VisionType")]
+[h: VisionTypeSelect = listFind(VisionTypeList, VisionType)]
+
+[h: status=input(
+"VisionType|"+VisionTypeList+"|Vision|LIST|SELECT="+VisionTypeSelect+" Value=STRING"
+   )]
+[h: switchToken(dude)]
+[h: setSightType(VisionType)]
