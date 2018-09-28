@@ -1,0 +1,26 @@
+[h:dado1 = d20]
+[h:dado2 = d20]
+[h:normal = dado1]
+[h:vantagem = max(dado1,dado2)]
+[h:desvantagem = min(dado1,dado2)]
+[h: CA = getProperty("AC")]
+
+[h:status = input(
+"situacao|Normal,Vantagem,Desvantagem|Situacao?|RADIO|SELECT=0",
+"bonus|0|Bonus",
+"dano|0|Dados de Dano")]
+[h:abort(status)]
+
+[h,if(situacao == 0):dado=normal; ""]
+[h,if(situacao == 1):dado=vantagem;""]
+[h,if(situacao == 2):dado=desvantagem;""]
+
+[h:result = dado+bonus]
+[if(dado == 1 || dado == 20),CODE:
+{
+[r:if(dado==1, "Erro Critico!!!", "Acerto Critico!!!")]
+};
+{
+[r:if(result>=CA, "Acertou!!!", "Errou!!!")]
+}]
+Hit: [r:result] / CA: [r: CA] Dano: ([r: eval(string(dano))]) | Detalhe: Rolagem (D20): [r:dado] + [r:bonus] = [r:result]

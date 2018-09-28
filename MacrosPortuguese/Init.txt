@@ -1,0 +1,8 @@
+[h:status = input(
+"Initiative|0|Iniciativa")]
+[h:abort(status)]
+
+[h:InitRoll=(Initiative)] 
+[h:addToInitiative()]
+[h:setInitiative(InitRoll)]
+[h:sortInitiative()]

@@ -1,0 +1,4 @@
+[h:InitRoll=(1d20+Initiative)] 
+[h:addToInitiative()]
+[h:setInitiative(InitRoll)]
+[h:sortInitiative()]

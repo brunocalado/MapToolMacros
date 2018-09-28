@@ -1,0 +1,40 @@
+[h:"texto"]
+[h:status = input(
+"hpChange|0|Pontos de Vida",
+"dmgOrHealing|Dano,Cura, Temp|O personagem esta recebendo dano ou cura?|RADIO|SELECT=0")]
+[h:abort(status)]
+ 
+[if(dmgOrHealing == 0),CODE:
+{
+    [if(hpChange <= TempHP),CODE:
+    {
+       [h:TempHP = TempHP - hpChange]
+       [hpChange = 0]
+    };{}]
+    [if(hpChange > TempHP),CODE:
+    {
+       [h:hpChange = hpChange - TempHP]
+       [h:TempHP = 0]
+    };{}]
+    [h:HP = HP - hpChange]
+    [h:bar.Health = HP / MaxHP]
+    [r:token.name] perde [r:hpChange] pontos de vida.
+};{}]
+
+[if(dmgOrHealing == 1),CODE:
+{
+    [if(hpChange > 0 && HP < 0),CODE: 
+    { 
+        [h:HP = 0]
+    };{}]
+    [h:diff = MaxHP - HP]
+    [h:HP = min(HP+hpChange, MaxHP)]
+    [h:bar.Health = HP / MaxHP]
+    [r:token.name] é curado e ganha [r:min(diff,hpChange)] pontos de vida.
+};{}]
+
+[if(dmgOrHealing == 2),CODE:
+{
+    [h:TempHP = hpChange]
+    [r:token.name] ganha [r:hpChange] pontos de vida temporários.
+};{}]

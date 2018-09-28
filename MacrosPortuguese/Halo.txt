@@ -1,0 +1,7 @@
+[h: setHalo("None")]
+[h:status=input(
+    "cor|None, Red,Green, Magenta, White, Yellow, Orange, Blue| Cor|LIST|SELECT=0 VALUE=STRING"
+)]
+[h:abort(status)]
+
+[h: setHalo(cor)]

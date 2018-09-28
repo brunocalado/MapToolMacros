@@ -1,0 +1,34 @@
+[h:status=input(
+    "Agarrado|"+getState("Agarrado")+"|Agarrado|CHECK",
+    "Amedrontado|"+getState("Amedrontado")+"|Amedrontado|CHECK",
+    "Atordoado|"+getState("Atordoado")+"|Atordoado|CHECK",
+    "Caido|"+getState("Caido")+"|Caido|CHECK",
+    "Cego|"+getState("Cego")+"|Cego|CHECK",        
+	"Enfeiticado|"+getState("Enfeiticado")+"|Enfeiticado|CHECK",
+	"Envenenado|"+getState("Envenenado")+"|Envenenado|CHECK",
+	"Impedido|"+getState("Impedido")+"|Impedido|CHECK",	
+	"Incapacitado|"+getState("Incapacitado")+"|Incapacitado|CHECK",	
+	"Inconsciente|"+getState("Inconsciente")+"|Inconsciente|CHECK",	
+	"Invisivel|"+getState("Invisivel")+"|Invisivel|CHECK",
+	"Paralisado|"+getState("Paralisado")+"|Paralisado|CHECK",	
+	"Petrificado|"+getState("Petrificado")+"|Petrificado|CHECK",
+	"Surdo|"+getState("Surdo")+"|Surdo|CHECK",
+	"Morto|"+getState("Morto")+"|Morto|CHECK"
+    )]
+[h:abort(status)]
+
+[h:state.Agarrado = Agarrado]
+[h:state.Amedrontado = Amedrontado]
+[h:state.Atordoado = Atordoado]
+[h:state.Caido = Caido]
+[h:state.Cego = Cego]
+[h:state.Enfeiticado = Enfeiticado]
+[h:state.Envenenado = Envenenado]
+[h:state.Impedido = Impedido]
+[h:state.Incapacitado = Incapacitado]
+[h:state.Inconsciente = Inconsciente]
+[h:state.Invisivel = Invisivel]
+[h:state.Paralisado = Paralisado]
+[h:state.Petrificado = Petrificado]
+[h:state.Surdo = Surdo]
+[h:state.Morto = Morto]
